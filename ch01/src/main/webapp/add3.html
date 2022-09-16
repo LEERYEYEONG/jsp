@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		if(!frm.num.value){ // form의 name과 column의 name을 찾아 가겠다.
+			alert("숫자입력 ?");
+			frm.num.focus();
+			return false;
+		}
+		if(isNaN(frm.num.value)){ // Not a Number
+			alert("숫자가 아님");
+			frm.num.focus();
+			frm.num.value = "";
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h1>숫자를 입력하세요</h1>					<!-- onsubmit 화면창에서 확인 버튼을 눌렀을 시 function값을 확인 -->
+		<form action="Add3" name = "frm" method="post" onsubmit="return chk()">
+		숫자 : 	<input type="text" name = "num"><p>
+		위치 : 	<input type="text" name = "loc"><p>
+				<input type="submit" value="확인">
+		</form>
+</body>
+</html>
